@@ -1,0 +1,160 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<title>SIAKNG - Universitas Indonesia</title>
+<style type="text/css">
+html,body{margin:0;padding:0;height:100%;}body{background:#FFF;font-size:72%;color:#444;}#wrapper{background:#F5F5DC;height:100%;border-right:1px solid #D9D9C3;}#left{width:550px;border-right:1px solid #EEE;}#right{width:250px;vertical-align:top;border-left:1px solid #FFF;}#header{background:#C93;color:#FFF;padding:10px 15px;font-size:1.5em;font-variant:small-caps;text-align:center;}h1{margin:0;font-weight:normal;font-size:2.4em;letter-spacing:-2px;color:#666;padding:14px 0 7px 0;}h1 em{font-size:.7em;letter-spacing:-1px;color:#B8860B;}#login,#info{padding-bottom:10px;}#footer{clear:both;padding:10px 20px;font-size:95%;color:#555;}p{margin:7px 0;}.error{color:indianred;font-weight:bold;}#submit{margin-top:10px;}label{display:block;font-size:95%;color:#9C7727;}input.text{font-size:1.4em;padding:2px 3px;font-weight:bold;color:#555;}a{color:#B8860B;}h3{font-size:1.5em;margin:20px 0 5px 0;color:olivedrab;}#info{padding-right:20px;}.col1{float:left;width:250px;}.col2{float:right;width:250px;}.clr{clear:both;}body,input{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;}h1,h3{font-family:"Century Gothic",Arial,Helvetica,sans-serif;}h1,#login,#info,#footer{padding-left:30px;}h1,#login,#info{border-bottom:1px solid #D9D9C3;}#login,#info,#footer{border-top:1px solid #FFF;}ul.contact{padding-left:24px;padding-right:10px}ul.contact li{margin-bottom:1em;color:steelblue;}ul.contact li strong{color:#333;}ul.contact li em{font-size:90%;color:#888;}
+</style>
+<link rel="shortcut icon" href="/main-www/themes/img/favicon.ico" />
+<script type="text/javascript">
+window.onload = function() {
+	if (window.self !== window.top) {
+		document.getElementsByTagName("body")[0].style.display = "none";
+	}
+	else {
+		document.getElementById("u").focus();
+	}
+};
+function z(v, m) { if (v.value.replace(/\s+/g, '') == '') { alert('Silakan masukkan '+m+' Anda'); v.focus(); return false; } return true; }
+function c(f) { f.action = 'Index'; return (z(f.u, 'username') && z(f.p, 'password')); }
+</script>
+</head>
+<body>
+	<table id="wrapper" cellpadding="0" cellspacing="0" border="0">
+		<tr><td colspan="2"><div id="header">Universitas Indonesia</div></td></tr>
+		<tr><td colspan="2" align="center">
+			<div class="lang icons" style="margin-top: 5px">
+																<span class="currentlang" title="Current Language"><img src="/main-www/themes/img/icon/flags/id.png" /></span>
+																<a href="../System/Language?lang=en"><img src="/main-www/themes/img/icon/flags/en.png" /></a>
+											</div>
+		</td></tr>
+		<tr><td valign="top" id="left">
+		<h1>Sistem Informasi Akademik <em>NextGeneration</em></h1>
+		<div id="login">
+			<h3>Login</h3>
+						<p>Silakan masukkan <em>username</em> dan <em>password</em> sesuai dengan akun UI Anda.</p>
+						<form action="NoJS" method="post" onsubmit="return c(this)">
+				<p><label for="u">Username</label>
+				<input type="text" class="text" name="u" size="25" maxlength="100" id="u" value="" /></p>
+				<p><label for="p">Password</label>
+				<input type="password" class="text" name="p" size="25" maxlength="100" /></p>
+				<p id="submit"><input type="submit" value="Login" /></p>
+			</form>
+		</div>
+		<div id="info">
+			<h3 style="color:#990000;font-size:16px;">
+				Waspada terhadap pencurian password!<br/>
+			</h3>
+			<h3 style="font-size:16px">
+				Pastikan alamat yang anda tuju adalah <a href="https://academic.ui.ac.id">https://academic.ui.ac.id</a>
+			</h3>
+		</div>
+		<div id="info">
+			<p style="font-size:14px">
+				Jika anda memiliki permasalahan yang berhubungan dengan pembayaran, silakan menghubungi Direktorat Keuangan UI pada jam kantor.<br />
+			</p>
+			<p>
+				<strong>Direktorat Keuangan UI<br />Gedung Rektorat Lantai 4, Kampus UI Depok</strong>
+				<br />
+				Tel. (62) (21) 78841818 or (62) (21) 7867222
+			</p>
+		</div>
+		<div id="info">
+			<p>Masa aktif <em>account</em> Anda adalah 6 bulan sejak dibuat atau sejak dilakukan penggantian 
+			<em>password</em>. Penggantian dan perpanjangan <em>password</em> untuk <em>account</em> yang masih aktif
+			dapat dilakukan di <a href="https://profile.ui.ac.id/" target="_blank">https://profile.ui.ac.id</a></p>
+
+			<h3 style="color:olivedrab;font-size:1.5em">Pelayanan <em>Account</em> UI</h3>
+			<p>Pengambilan <em>account</em> baru, penggantian <em>password</em> jika lupa/hilang, atau
+			perpanjangan <em>account</em> untuk <em>account</em> yang sudah tidak aktif dapat dilakukan di:</p>
+			<div class="col1">
+				<p><strong>Gedung DSTI Lantai 1 Dekat Fasilkom/MTI<br />
+				Kampus UI Salemba</strong><br />
+				Senin-Jumat 09.00-16.00<br />
+				Tel. (62) (21) 31930308</p>
+			</div>
+			<div class="col2">
+				<p><strong>Gedung Perpustakaan Lama lantai 2 Berdampingan dengan ITTC<br />
+				Kampus UI Depok</strong><br />
+				Senin-Jumat 09.00-16.00<br />
+				Tel. (62) (21) 7875963 tekan 0<br />
+				Email : support[at]ui.ac.id<br />
+				Website : <a href="http://dsti.ui.ac.id" target="_blank">http://dsti.ui.ac.id</a></p>
+			</div>
+			<div class="clr"></div>
+		</div>
+		<div id="footer">
+			<table width="100%"><tr>
+			<td>
+			&copy; 2006-2022 <strong><a href="http://www.ui.ac.id/" target="_blank">Universitas Indonesia</a></strong><br />
+			Direktorat Sistem dan Teknologi Informasi (DSTI) UI<br />
+			Server: Node 0
+			</td>
+			<td align="right">
+				&nbsp;
+			</td>
+			</tr></table>
+		</div>
+		</td><td id="right">
+		<h1 style="padding-left:0;padding-right:0;text-align:center">No. Tel. Fakultas</h1>
+		<ul class="contact">
+			<li><strong>Fakultas Kedokteran</strong><br />
+				+62-21 3912477</li>
+			<li><strong>Fakultas Kedokteran Gigi</strong><br />
+				+62-21 31930270, 3151035, 31931412</li>
+			<li><strong>Fakultas Matematika &amp; IPA</strong><br />
+				+62-21 7863436</li>
+			<li><strong>Fakultas Teknik</strong><br />
+				+62-21 7863504, 78888430</li>
+			<li><strong>Fakultas Hukum</strong><br />
+				+62-21 7270003, 7863442<br />
+				+62-21 3917252 <em>(Salemba)</em></li>
+			<li><strong>Fakultas Ekonomi</strong><br />
+				+62-21 7863571, 7272649<br />
+			  +62-21 31935080, 31930260 <em>(Salemba)</em></li>
+			<li><strong>Fakultas Ilmu Pengetahuan Budaya</strong><br />
+				+62-21 7863528, 7863529</li>
+			<li><strong>Fakultas Psikologi</strong><br />
+				+62-21 7270004, 7270005</li>
+			<li><strong>Fakultas Ilmu Sosial &amp; Ilmu Politik</strong><br />
+				+62-21 78849018 <em>(Ilmu Komunikasi)</em><br />
+				+62-21 7863425, 7271574 <em>(Kriminologi)</em><br />
+				+62-21 78849025 <em>(Sosiologi)</em><br />
+				+62-21 7863426 <em>(Ilmu Kesejahteraan Sosial)</em><br />
+				+62-21 7870348 <em>(Antropologi)</em><br />
+				+62-21 7873744 <em>(Ilmu Hubungan Internasional)</em><br />
+				+62-21 786740, 7864739 <em>(Ekstensi)</em><br />
+				+62-21 3156941 <em>(Magister Ilmu Komunikasi)</em><br />
+				+62-21 78884648, 7863102 <em>(Magister Ilmu Politik)</em><br />
+				+62-21 7271572 <em>(Magister Kriminologi)</em><br />
+				+62-21 3901390 <em>(Magister Sosiologi)</em><br />
+				+62-21 7270228 <em>(Magister Ilmu Kesejahteraan Sosial)</em><br />
+				+62-21 78849022 <em>(Magister Antropologi)</em><br />
+				+62-21 3142285 <em>(Magister Ilmu Hubungan Internasional)</em><br />
+				+62-21 3416737 <em>(Doktoral)</em>
+			</li>
+			<li><strong>Fakultas Kesehatan Masyarakat</strong><br />
+				+62-21 7270803, 7864975/76/79</li>
+			<li><strong>Fakultas Ilmu Komputer</strong><br />
+				+62-21 7863419</li>
+			<li><strong>Fakultas Ilmu Keperawatan</strong><br />
+				+62-21 78849120, 78849121</li>
+			<li><strong>Program Vokasi</strong><br />
+				+62-21 29027481, 29027482
+			</li>
+			<li><strong>Fakultas Farmasi</strong><br />
+				+62-21-7270031, 7864049, 78884557, 78849001, 78849002, 78849003
+			</li>
+			<li><strong>Fakultas Ilmu Administrasi</strong><br />
+				+62-21 78849087
+			</li>
+			<li><strong>Sekolah Ilmu Lingkungan</strong><br />
+				+62-21 3100059, 3900539, 3924710, 3929717</li>
+			<li><strong>Sekolah Kajian Stratejik dan Global</strong><br />
+				+62-21 3100059, 3900539, 3924710, 3929717</li>
+		</ul>
+	</td></tr></table>
+</body>
+</html>

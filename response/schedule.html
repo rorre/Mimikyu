@@ -1,0 +1,1422 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<title>Jadwal Kelas Mata Kuliah - SIAK NG</title>
+    
+<link rel="stylesheet" type="text/css" href="/main-www/themes/Blue/main/style-min.css" />
+<link rel="stylesheet" type="text/css" href="/main-www/themes/Blue/main/table-min.css" />
+<link rel="stylesheet" type="text/css" href="/main-www/themes/Blue/main/menu-min.css" />
+
+<script type="text/javascript" src="/main-www/themes/Blue/js/libs_c.js"></script>
+<script type="text/javascript" src="/main-www/themes/Blue/js/default.js"></script>
+
+
+
+
+
+<script type="text/javascript" language="javascript" src="/main-www/modpub/Schedule/script.js"></script>
+
+<!--[if IE]>
+<style type="text/css">
+/* 50 = ti_m padding + margin */
+#t_o { width: expression((document.getElementById('ti_m').offsetWidth + 50) > document.documentElement.offsetWidth ? document.documentElement.scrollWidth : ''); }
+#ti_m1 { border-left: 0; }
+#t_m .linfo, #t_m .rinfo { line-height: 1.6em; }
+.toolbar fieldset { padding-bottom: 2px; }
+input.button { padding: 0 8px; }
+h3 { background-position: 0 1px; }
+/* To prevent extra spacing under the tab */
+div.tab { float: none; }
+</style>
+<![endif]-->
+
+<!--[if lte IE 6]>
+<script type="text/javascript" language="javascript" src="/main-www/themes/Blue/js/cssmenu.js"></script>
+<style type="text/css">
+img {
+	behavior: url("/main-www/themes/css/pngbehavior.htc"); /* Must be absolute path */
+}
+</style>
+<![endif]-->
+
+
+
+<!-- module IE css -->
+
+
+
+<link rel="shortcut icon" href="/themes/img/favicon.ico" />
+<link rel="apple-touch-icon" href="/themes/img/favicon.png"/>
+<link rel="apple-touch-icon-precomposed" href="/themes/img/favicon.png">
+</head>
+
+<body>
+	
+	<div id="t_o">
+			
+		<div id="t_h">
+			<div class="w0">
+				<div class="w1">
+					<div id="logo"><img alt="makara" src="/main-www/themes/img/makara.png" style="width:42px;height:42px"/></div>
+					<h1> SIAK<em>NG</em></h1>
+					<div class="lang icons">
+						Language: &nbsp;
+																					<span class="currentlang" title="Current Language"><img src="/main-www/themes/img/icon/flags/id.png" /></span>
+																					<a href="../System/Language?lang=en"><img src="/main-www/themes/img/icon/flags/en.png" /></a>
+														 |
+						zoom <select onchange="zoom(this)"><option value="100">100%</option><option value="110">110%</option><option value="120">120%</option><option value="140">140%</option><option value="150">150%</option></select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="t_m">
+			<div class="w0">
+				<div class="w1">
+					<ul id="nv"><li class="static"><a href="#">&gt;&gt;</a></li><li><a href="../Welcome/Index">Home</a></li><li class="class hc"><a href="#">Akademis</a><ul><li><a href="../Academic/Summary">Ringkasan</a></li><li><a href="../Academic/HistoryByTerm">Riwayat</a></li><li><a href="../Academic/Payment">Pembayaran</a></li><li class="last"><a href="../Academic/StatusList">Status Akademis</a></li></ul></li><li class="class hc"><a href="#">Kalender Akademik</a><ul><li class="last"><a href="../CalendarUI/Index">Kalender Akademik</a></li></ul></li><li class="class hc"><a href="#">Mata Kuliah Spesial</a><ul><li><a href="../CourseGuidance/IndexStudent">Bimbingan</a></li><li><a href="../FinalProject/StudentEdit">Tugas Akhir</a></li><li class="sep"><div></div></li><li class="last"><a href="../SpecialCourse/UianaStatus">Pengunggahan UIana</a></li></ul></li><li class="class hc"><a href="#">IRS</a><ul><li><a href="../CoursePlan/CoursePlanViewSummary">Lihat IRS</a></li><li><a href="../CoursePlan/CoursePlanEdit">Isi/Ubah IRS</a></li><li class="sep"><div></div></li><li><a href="../CoursePlan/CoursePlanAdd">Add IRS</a></li><li><a href="../CoursePlan/CoursePlanDrop">Drop IRS</a></li><li class="sep"><div></div></li><li class="last"><a href="../CoursePlan/ReplyComment">Kirim Pesan ke PA</a></li></ul></li><li class="class hc"><a href="#">Perkuliahan</a><ul><li><a href="../Class/SAP4Student">Rencana Perkuliahan</a></li><li class="sep"><div></div></li><li class="last"><a href="../Student/LeaveApplication">Pengajuan Cuti</a></li></ul></li><li class="class hc"><a href="#">Mahasiswa</a><ul><li class="sep"><div></div></li><li><a href="../Student/IDMView">Lihat IDM</a></li><li><a href="../Student/IDMEdit">Ubah IDM</a></li><li class="sep"><div></div></li><li class="last"><a href="../Student/IndexDokumen">Dokumen</a></li></ul></li><li class="class hc"><a href="#">Jadwal</a><ul><li><a href="../Schedule/Index">Jadwal Kuliah</a></li><li><a href="../Schedule/IndexOthers">Jadwal Kuliah Keseluruhan</a></li><li><a href="../Examination/Index">Jadwal Ujian</a></li><li><a href="../SpecialCourse/StudentListGuidance">Jadwal Sidang</a></li><li class="sep"><div></div></li><li class="last"><a href="../Orientation/StudentIndex">Jadwal OBM</a></li></ul></li><li class="class hc"><a href="#">Support</a><ul><li><a href="../Help/Manual">Manual SIAK-NG</a></li><li><a href="../Help/FAQ">Frequently Asked Questions</a></li><li class="sep"><div></div></li><li class="last"><a href="../Help/Contact">Contact List</a></li></ul></li></ul>
+					<div style="border-top:2px solid gold;border-bottom:1px solid #C90"><!-- --></div>
+					<div id="m_b">
+						<div id="m_b1">
+							<div class="linfo" style="border-left:0">
+								Saturday, 22 January 2022 (Node 0) 
+								| 
+									 
+									 Tahun Ajaran 2021/2022 Term 2
+																	<br/>
+								<strong>
+																<a href="/main/Authentication/Status" title="Detail"><img style="vertical-align:bottom" src="/main-www/themes/img/icon/role2.png" class="png16" alt="person"/></a> 
+																&ndash; <a href="/main/Authentication/ChangeRole?role=Mahasiswa" title="Ganti Role">Mahasiswa</a> 
+								S1 ZCZC ZCZC ZCZC (XX.XX.XX.XX)								</strong>
+							</div>
+							<div class="linfo" style="border-right:0">
+								 <a href="../Authentication/Logout"><img src="/main-www/themes/Blue/main/logout.gif" /></a>
+							</div>
+							<div class="rinfo" style="font:1.2em Tahoma;color:#999;letter-spacing:-1px">
+								Logout Counter <span id="ss_min">30</span>:<span id="ss_sec">00</span>
+							</div>
+							
+							<div class="clear"><!-- --></div>
+
+							<div style="border-bottom:1px solid #DDD"><!-- --></div>
+							<h2 id="ti_h">Jadwal Kelas Mata Kuliah</h2>
+							<div id="ti_m">
+								<div id="ti_m1">
+																		<div style="text-align:center">
+            <table cellpadding="0" cellspacing="0" style="text-align:left;margin:0 auto" align="center">
+            <tr><td>
+<div class="toolbar">
+	<form action="Index" method="get">
+		<fieldset>
+			<label class="left" for="period">Periode</label>
+			<select name="period" id="period">
+																<option value="2021-2" selected>2021/2022 - 2</option>
+																<option value="2021-1">2021/2022 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2020-2">2020/2021 - 2</option>
+																<option value="2020-1">2020/2021 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2019-2">2019/2020 - 2</option>
+																<option value="2019-1">2019/2020 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2018-3">2018/2019 - SP</option>
+																<option value="2018-2">2018/2019 - 2</option>
+																<option value="2018-1">2018/2019 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2017-3">2017/2018 - SP</option>
+																<option value="2017-2">2017/2018 - 2</option>
+																<option value="2017-1">2017/2018 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2016-3">2016/2017 - SP</option>
+																<option value="2016-2">2016/2017 - 2</option>
+																<option value="2016-1">2016/2017 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2015-3">2015/2016 - SP</option>
+																<option value="2015-2">2015/2016 - 2</option>
+																<option value="2015-1">2015/2016 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2014-3">2014/2015 - SP</option>
+																<option value="2014-2">2014/2015 - 2</option>
+																<option value="2014-1">2014/2015 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2013-3">2013/2014 - SP</option>
+																<option value="2013-2">2013/2014 - 2</option>
+																<option value="2013-1">2013/2014 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2012-3">2012/2013 - SP</option>
+																<option value="2012-2">2012/2013 - 2</option>
+																<option value="2012-1">2012/2013 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2011-3">2011/2012 - SP</option>
+																<option value="2011-2">2011/2012 - 2</option>
+																<option value="2011-1">2011/2012 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2010-3">2010/2011 - SP</option>
+																<option value="2010-2">2010/2011 - 2</option>
+																<option value="2010-1">2010/2011 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2009-3">2009/2010 - SP</option>
+																<option value="2009-2">2009/2010 - 2</option>
+																<option value="2009-1">2009/2010 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2008-3">2008/2009 - SP</option>
+																<option value="2008-2">2008/2009 - 2</option>
+																<option value="2008-1">2008/2009 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2007-3">2007/2008 - SP</option>
+																<option value="2007-2">2007/2008 - 2</option>
+																<option value="2007-1">2007/2008 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2006-3">2006/2007 - SP</option>
+																<option value="2006-2">2006/2007 - 2</option>
+																<option value="2006-1">2006/2007 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2005-3">2005/2006 - SP</option>
+																<option value="2005-2">2005/2006 - 2</option>
+																<option value="2005-1">2005/2006 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2004-3">2004/2005 - SP</option>
+																<option value="2004-2">2004/2005 - 2</option>
+																<option value="2004-1">2004/2005 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2003-2">2003/2004 - 2</option>
+																<option value="2003-1">2003/2004 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2002-2">2002/2003 - 2</option>
+																<option value="2002-1">2002/2003 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2001-2">2001/2002 - 2</option>
+																<option value="2001-1">2001/2002 - 1</option>
+												<option disabled="disabled">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</option>
+												<option value="2000-2">2000/2001 - 2</option>
+																<option value="2000-1">2000/2001 - 1</option>
+							</select>
+			<input type="submit" value="Lihat Jadwal" />
+						<label for="search">Cari Mata Kuliah</label>
+			<input type="text" name="search" id="search" value="" />
+			<input type="submit" value="Search" />
+					</fieldset>
+	</form>
+</div>
+
+<a name="top"></a>
+<div class="tab">
+	<ul>
+		<li><a href="#1"><span>Kelas Internal</span></a></li>
+		<li><a href="#2"><span>Kelas Bersama</span></a></li>
+		<li><a href="#3"><span>Kelas Eksternal</span></a></li>
+	</ul>
+</div>
+<div class="clear"></div>
+
+
+<h3>Kelas Internal<a name="1">&nbsp;</a><a href="#top" style="font-size:0.8em">[&nbsp;top]</a></h3>
+<table class="box">
+	<tr>
+		<td class="head" colspan="7">Kode MK - <strong>Nama Mata Kuliah</strong> (Kredit, Term); Kurikulum</td>
+	</tr>
+	<tr>
+		<th>No.</th>
+		<th>Nama Kelas</th>
+				<th>Bahasa</th>
+		<th>Periode</th>
+		<th>Waktu</th>
+		<th>Ruang</th>
+		<th>Pengajar</th>
+			</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE602012 - <strong>Aljabar Linier</strong> (3 SKS, Term 3); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">1.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=683351" target="_blank" title="683351">Alin A (2021)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 10.00-11.40<br />Jumat, 10.00-10.50</td>
+			<td>2.2306<br />2.2306</td>
+									<td>- Dr. Dra. Kasiyah M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">2.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678483" target="_blank" title="678483">Alin B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 10.00-11.40<br />Rabu, 09.00-09.50</td>
+			<td>A2.08 (Ged Baru)<br />A2.08 (Ged Baru)</td>
+									<td>-  Aruni Yasmin Azizah, S.Kom., M.Comp.Sc</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM603117 - <strong>Analisis Numerik</strong> (3 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">3.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678108" target="_blank" title="678108">Analisis Numerik A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-13.50</td>
+			<td>A6.09 (Ged Baru)<br />A6.09 (Ged Baru)</td>
+									<td>- Prof. Drs. T. Basaruddin M.Sc., Ph.D.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">4.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678109" target="_blank" title="678109">Analisis Numerik B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Rabu, 14.00-14.50</td>
+			<td>A6.09 (Ged Baru)<br />A6.09 (Ged Baru)</td>
+									<td>-  Raja Oktovin Parhasian Damanik, S.Kom., M.Sc.<br/>- Prof. Drs. T. Basaruddin M.Sc., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE602070 - <strong>Basis Data</strong> (4 SKS, Term 4); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">5.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677663" target="_blank" title="677663">BasdatA (Blended SI)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Kamis, 15.00-16.40<br />Jumat, 10.00-11.40</td>
+			<td>2.2402<br />2.2402</td>
+									<td>- Yova Ruldeviyani S.Kom., M.Kom.<br/>-  Rian Fitriansyah, M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">6.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677664" target="_blank" title="677664">BasdatD (Blended IK)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Kamis, 15.00-16.40<br />Jumat, 10.00-11.40</td>
+			<td>3.3111<br />3.3111</td>
+									<td>-  Dipta Tanaya, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">7.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678534" target="_blank" title="678534">Basis Data B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Kamis, 15.00-16.40<br />Jumat, 10.00-11.40</td>
+			<td>2.2404<br />2.2406</td>
+									<td>-  Meganingrum Arista Jiwanggi, S.Kom., M.Kom., M.Comp.Sc</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">8.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678530" target="_blank" title="678530">Basis Data C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 15.00-16.40<br />Jumat, 08.00-09.40</td>
+			<td>2.2405<br />2.2406</td>
+									<td>-  Widia Resti Fitriani, S.Kom., M.Kom.<br/>-  Meganingrum Arista Jiwanggi, S.Kom., M.Kom., M.Comp.Sc</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">9.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678524" target="_blank" title="678524">Basis Data E</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 15.00-16.40<br />Jumat, 08.00-09.40</td>
+			<td>2.2406<br />2.2401</td>
+									<td>-  Iis Afriyanti, S.Kom., M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">10.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678520" target="_blank" title="678520">Basis Data F</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 10.00-11.40<br />Jumat, 08.00-09.40</td>
+			<td>2.2602<br />2.2602</td>
+									<td>-  Imairi Eitiveni, S.Kom., M.Kom., Ph.D.<br/>-  Dipta Tanaya, S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604174 - <strong>Basis Data Lanjut</strong> (3 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">11.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677959" target="_blank" title="677959">Basis Data Lanjut</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 08.00-10.30</td>
+			<td>A6.12 (Ged Baru)</td>
+									<td>- Evi Yulianti M.Comp.Sc., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE601021 - <strong>Dasar - Dasar Pemrograman 2</strong> (4 SKS, Term 2); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">12.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678883" target="_blank" title="678883">DDP 2-A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-14.40<br />Kamis, 15.00-16.40</td>
+			<td>2.2306<br />2.2302<br />Lab A1.03 (Ged Baru)</td>
+									<td>- Drs. Lim Yohanes Stefanus M.Math., Ph.D.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">13.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678885" target="_blank" title="678885">DDP 2-B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-14.40<br />Kamis, 15.00-16.40</td>
+			<td>2.2404<br />2.2404<br />Lab A1.02 (Ged Baru)</td>
+									<td>- Dr. Eng. Laksmita Rahadianti S.Kom., M.Sc.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">14.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677649" target="_blank" title="677649">DDP 2-C (Blended)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-09.40<br />Kamis, 15.00-16.40</td>
+			<td>3.3114<br />3.3114<br />Lab.1101/1103</td>
+									<td>-  Pudy Prima, S.T., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">15.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678895" target="_blank" title="678895">DDP 2-D</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-14.40<br />Kamis, 15.00-16.40</td>
+			<td>2.2405<br />2.2406<br />Lab.1105/1106</td>
+									<td>- Muhammad Hafizhuddin Hilman S.Kom., M.Kom., Ph.D.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">16.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678892" target="_blank" title="678892">DDP 2-E</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-09.40<br />Kamis, 15.00-16.40</td>
+			<td>A2.07 (Ged baru)<br />A6.09 (Ged Baru)<br />Lab A1.01 (Ged Baru)</td>
+									<td>- Evi Yulianti M.Comp.Sc., Ph.D.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">17.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677650" target="_blank" title="677650">DDP 2-F (Blended)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-09.40<br />Kamis, 15.00-16.40</td>
+			<td>2.2304<br />2.2304<br />Lab.1107/1109</td>
+									<td>- Alfan Farizki Wicaksono S.T., M.Sc., Ph.D.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">18.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678887" target="_blank" title="678887">DDP 2-G</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-09.40<br />Kamis, 15.00-16.40</td>
+			<td>2.2306<br />2.2307<br />Lab A1.04 (Ged baru)</td>
+									<td>- Dr. Fariz Darari</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE601020 - <strong>Dasar-Dasar Pemrograman 1</strong> (4 SKS, Term 1); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">19.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678493" target="_blank" title="678493">DDP 1</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 08.00-09.40<br />Kamis, 08.00-09.40</td>
+			<td>A2.08 (Ged Baru)<br />A6.07 (Ged Baru)<br />Lab.1103</td>
+									<td>-  Hafizh Rafizal Adnan, S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM603142 - <strong>Desain &amp; Analisis Algoritma</strong> (4 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">20.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678114" target="_blank" title="678114">DAA A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Kamis, 10.00-11.40<br />Jumat, 10.00-11.40</td>
+			<td>A6.10 (Ged Baru)<br />A6.10 (Ged Baru)</td>
+									<td>- Dr. Ika Alfina S.Kom., M.Kom.<br/>-  Raja Oktovin Parhasian Damanik, S.Kom., M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">21.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678115" target="_blank" title="678115">DAA B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Kamis, 08.00-09.40<br />Jumat, 08.00-09.40</td>
+			<td>A6.10 (Ged Baru)<br />A6.10 (Ged Baru)</td>
+									<td>-  Raja Oktovin Parhasian Damanik, S.Kom., M.Sc.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604241 - <strong>Grafika Komputer</strong> (3 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">22.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678110" target="_blank" title="678110">Grafika Komputer</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-13.40<br />Rabu, 13.00-13.50</td>
+			<td>2.2301<br />2.2301</td>
+									<td>- Dadan Hardianto S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE601012 - <strong>Kalkulus 1</strong> (3 SKS, Term 1); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">23.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678446" target="_blank" title="678446">Kalkulus 1</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Kamis, 10.00-10.50<br />Jumat, 08.00-09.40</td>
+			<td>A2.08 (Ged Baru)<br />A2.08 (Ged Baru)</td>
+									<td>- Prof. Drs. T. Basaruddin M.Sc., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM601213 - <strong>Kalkulus 2</strong> (3 SKS, Term 2); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">24.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678427" target="_blank" title="678427">Kalkulus 2 A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 08.00-09.40<br />Kamis, 08.00-08.50<br />Jumat, 08.00-08.50</td>
+			<td>2.2307<br />2.2307<br />2.2307</td>
+									<td>- Prof. Heru Suhartanto M.Sc., Ph.D.<br/>-  Santi Yuli Astuti, S.Si., M.Si.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">25.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678424" target="_blank" title="678424">Kalkulus 2 C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-14.40<br />Kamis, 13.00-13.50<br />Jumat, 08.00-08.50</td>
+			<td>2.2306<br />2.2306<br />2.2306</td>
+									<td>-  Santi Yuli Astuti, S.Si., M.Si.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">26.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677677" target="_blank" title="677677">Kalkulus2B (Blended)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 08.00-09.40<br />Kamis, 08.00-08.50<br />Jumat, 08.00-08.50</td>
+			<td>3.3114<br />3.3114<br />3.3114</td>
+									<td>- Amril Syalim S.Kom., M.Eng., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE603130 - <strong>Kecerdasan Artifisial &amp;  Sains Data Dasar</strong> (4 SKS, Term 0); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">27.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678111" target="_blank" title="678111">KASDD A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 16.00-17.40<br />Rabu, 16.00-17.40</td>
+			<td>2.2401<br />2.2401</td>
+									<td>- Siti Aminah S.Kom., M.Kom</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">28.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=683805" target="_blank" title="683805">KASDD B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 16.00-17.40<br />Rabu, 16.00-17.40</td>
+			<td>2.2302<br />2.2302</td>
+									<td>- Siti Aminah S.Kom., M.Kom<br/>-  Theresia Veronika Rampisela, S.Si., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE614093 - <strong>Komputer &amp; Masyarakat</strong> (3 SKS, Term 0); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">29.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677906" target="_blank" title="677906">Komas A</a></td>
+						<td>Inggris</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 09.00-11.30</td>
+			<td>A6.07 (Ged Baru)</td>
+									<td>- Drs. Widijanto Satyo Nugroho M.Math., Ph.D.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">30.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677909" target="_blank" title="677909">Komas B</a></td>
+						<td>Inggris</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Kamis, 09.00-11.30</td>
+			<td>A6.07 (Ged Baru)</td>
+									<td>- Drs. Widijanto Satyo Nugroho M.Math., Ph.D.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">31.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677907" target="_blank" title="677907">Komas C</a></td>
+						<td>Inggris</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 09.00-11.30</td>
+			<td>A6.09 (Ged Baru)</td>
+									<td>- Prof. Dr. Eng. Wisnu Jatmiko S.T., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604243 - <strong>Kriptografi &amp; Keamanan Informasi</strong> (4 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">32.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677897" target="_blank" title="677897">Kriptografi</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 15.00-16.40<br />Kamis, 15.00-16.40</td>
+			<td>2.2301<br />2.2301</td>
+									<td>- Amril Syalim S.Kom., M.Eng., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604271 - <strong>Layanan &amp; Aplikasi Web</strong> (3 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">33.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677960" target="_blank" title="677960">LAW A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Rabu, 08.00-08.50<br />Jumat, 08.00-09.40</td>
+			<td>2.2301<br />2.2301</td>
+									<td>- Gladhi Guarddin S.Kom., M. Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">34.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=683796" target="_blank" title="683796">LAW B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Rabu, 08.00-08.50<br />Jumat, 08.00-09.40</td>
+			<td>2.2302<br />2.2302</td>
+									<td>- Gladhi Guarddin S.Kom., M. Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604244 - <strong>Logika Komputasional</strong> (3 SKS, Term 7); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">35.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677936" target="_blank" title="677936">Logika Komputasional</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-15.30</td>
+			<td>A6.11 (Ged Baru)</td>
+									<td>- Drs. Lim Yohanes Stefanus M.Math., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">UIGE600006 - <strong>MPK Terintegrasi</strong> (5 SKS, Term 2); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">36.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678378" target="_blank" title="678378">MPK Terintegrasi-A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-16.00</td>
+			<td>A1.07 (Ged Baru)</td>
+									<td>-  Iis Afriyanti, S.Kom., M.Sc.<br/>- Harry Budi Santoso M.Kom., Ph.D.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">37.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678390" target="_blank" title="678390">MPK Terintegrasi-B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-16.00</td>
+			<td>A1.10 (Ged Baru)</td>
+									<td>- Dr. Dra. Kasiyah M.Sc.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">38.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678391" target="_blank" title="678391">MPK Terintegrasi-C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-16.00</td>
+			<td>A1.08 (Ged Baru)</td>
+									<td>-  Ari Wibisono, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">39.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678392" target="_blank" title="678392">MPK Terintegrasi-D</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-16.00</td>
+			<td>A2.08 (Ged Baru)</td>
+									<td>- Dr. Drs. R. Yugo Kartono Isal M.Sc.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">40.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678395" target="_blank" title="678395">MPK Terintegrasi-E</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-16.00</td>
+			<td>A2.09 (Ged Baru)</td>
+									<td>- Dr. Drs. R. Yugo Kartono Isal M.Sc.<br/>-  Arawinda Dinakaramani, S.Kom., M.Hum.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">41.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678397" target="_blank" title="678397">MPK Terintegrasi-F</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-16.00</td>
+			<td>A2.07 (Ged baru)</td>
+									<td>-  Iis Afriyanti, S.Kom., M.Sc.<br/>-  Arawinda Dinakaramani, S.Kom., M.Hum.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604235 - <strong>Pemelajaran Mesin</strong> (3 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">42.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678113" target="_blank" title="678113">Pemelajaran Mesin</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-15.50<br />Rabu, 15.00-16.40</td>
+			<td>A6.10 (Ged Baru)<br />A6.10 (Ged Baru)</td>
+									<td>- Adila Alfa Krisnadhi S.Kom., M.Sc.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE602022 - <strong>Pemrograman Berbasis Platform</strong> (4 SKS, Term 3); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">43.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678485" target="_blank" title="678485">PBP</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Rabu, 10.00-11.40<br />Kamis, 10.00-11.40</td>
+			<td>A2.07 (Ged baru)<br />A2.07 (Ged baru)</td>
+									<td>- Gladhi Guarddin S.Kom., M. Kom.<br/>-  Arawinda Dinakaramani, S.Kom., M.Hum.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604226 - <strong>Pemrograman Kompetitif</strong> (3 SKS, Term 0); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">44.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678450" target="_blank" title="678450">Pemrog Kompetitif</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 09.00-11.30</td>
+			<td>A1.09 (Ged Baru)</td>
+									<td>- Denny S.Kom., M.I.T., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM602223 - <strong>Pemrograman Lanjut</strong> (4 SKS, Term 4); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">45.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678071" target="_blank" title="678071">Pemrograman Lanjut A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-14.40<br />Kamis, 13.00-14.40</td>
+			<td>2.2404<br />2.2404</td>
+									<td>-  Rian Fitriansyah, M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">46.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678073" target="_blank" title="678073">Pemrograman Lanjut B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-14.40<br />Kamis, 13.00-14.40</td>
+			<td>2.2405<br />2.2405</td>
+									<td>-  Muhammad Anwar Ma&#039;sum, S.Kom., M.Kom.<br/>-  Ichlasul Affan, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">47.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677654" target="_blank" title="677654">Prg Lanj B (Blended)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-14.40<br />Kamis, 13.00-14.40</td>
+			<td>3.3111<br />3.3111</td>
+									<td>- Gladhi Guarddin S.Kom., M. Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604222 - <strong>Pemrograman Logika</strong> (4 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">48.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677974" target="_blank" title="677974">Pemrograman Logika</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Kamis, 08.00-09.40</td>
+			<td>A6.12 (Ged Baru)<br />A6.12 (Ged Baru)</td>
+									<td>- Ari Saptawijaya S.Kom., M.Sc., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604229 - <strong>Pemrograman Paralel</strong> (4 SKS, Term 7); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">49.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677978" target="_blank" title="677978">Pemrograman Paralel</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 10.00-11.40<br />Rabu, 10.00-11.40</td>
+			<td>2.2603<br />2.2603</td>
+									<td>-  Ari Wibisono, S.Kom., M.Kom.<br/>- Prof. Heru Suhartanto M.Sc., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604227 - <strong>Pemrograman Sistem</strong> (3 SKS, Term 7); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">50.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677905" target="_blank" title="677905">Pemrograman Sistem</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-14.40<br />Kamis, 13.00-13.50</td>
+			<td>3.3113<br />3.3113</td>
+									<td>- Rahmat Mustafa Samik Ibrahim M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604137 - <strong>Penambangan Data</strong> (3 SKS, Term 7); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">51.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678107" target="_blank" title="678107">Penambangan Data</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-14.40<br />Kamis, 13.00-13.50</td>
+			<td>2.2301<br />2.2301</td>
+									<td>- Rahmad Mahendra S.Kom., M.Sc.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM601252 - <strong>Pengantar Organisasi Komputer</strong> (3 SKS, Term 2); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">52.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678401" target="_blank" title="678401">POK A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 10.00-11.40<br />Kamis, 09.00-09.50<br />Jumat, 16.00-17.40</td>
+			<td>2.2604<br />2.2604<br />Lab.1107/1109</td>
+									<td>- Dr. Ir. Erdefi Rakun M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">53.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678404" target="_blank" title="678404">POK B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 15.00-16.40<br />Kamis, 14.00-14.50<br />Jumat, 16.00-17.40</td>
+			<td>2.2604<br />2.2604<br />Lab.1101</td>
+									<td>- Dr. Ir. Erdefi Rakun M.Sc.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">54.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677681" target="_blank" title="677681">POK C (Blended)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 10.00-11.40<br />Kamis, 09.00-09.50<br />Jumat, 16.00-17.40</td>
+			<td>3.3114<br />3.3114<br />Lab.1101/1103</td>
+									<td>- Ir. Adhi Yuniarto Laurentius Yohannes M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM601150 - <strong>Pengantar Sistem Digital</strong> (4 SKS, Term 1); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">55.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678413" target="_blank" title="678413">PSD</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Selasa, 15.00-16.40</td>
+			<td>A1.07 (Ged Baru)<br />A1.07 (Ged Baru)</td>
+									<td>-  Arawinda Dinakaramani, S.Kom., M.Hum.<br/>- Ir. Adhi Yuniarto Laurentius Yohannes M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604212 - <strong>Persamaan Diferensial</strong> (3 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">56.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677902" target="_blank" title="677902">Pers Diferensial</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Rabu, 13.00-14.40<br />Jumat, 10.00-10.50</td>
+			<td>A1.07 (Ged Baru)<br />A1.07 (Ged Baru)</td>
+									<td>- Drs. Widijanto Satyo Nugroho M.Math., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM603228 - <strong>Proyek Perangkat Lunak</strong> (6 SKS, Term 6); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">57.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678077" target="_blank" title="678077">PPL A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 09.00-11.30<br />Rabu, 09.00-11.30</td>
+			<td>2.2406<br />2.2406</td>
+									<td>- Dr. Ade Azurat</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">58.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678079" target="_blank" title="678079">PPL B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 09.00-11.30<br />Rabu, 09.00-11.30</td>
+			<td>2.2405<br />2.2405</td>
+									<td>-  Iis Solichah, S.Kom., M.Kom., M.Comp.Sc<br/>-  Ichlasul Affan, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">59.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678082" target="_blank" title="678082">PPL C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 09.00-11.30<br />Rabu, 09.00-11.30</td>
+			<td>2.2303<br />2.2303</td>
+									<td>-  Muhammad Mishbah, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">60.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678075" target="_blank" title="678075">PPL D</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 09.00-11.30<br />Rabu, 09.00-11.30</td>
+			<td>2.2502<br />2.2502</td>
+									<td>-  Bintang Annisa Bagustari, S.Kom., M.Kom.<br/>-  Bukhori Muhammad Aqid, S.Kom., M.Sc.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604232 - <strong>Robotika</strong> (3 SKS, Term 5); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">61.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677893" target="_blank" title="677893">Robotika</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Rabu, 15.00-15.50</td>
+			<td>2.2301<br />2.2301</td>
+									<td>- Prof. Dr. Eng. Wisnu Jatmiko S.T., M.Kom.<br/>-  Muhammad Anwar Ma&#039;sum, S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM602055 - <strong>Sistem Operasi</strong> (4 SKS, Term 3); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">62.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678365" target="_blank" title="678365">Sistem Operasi</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 08.00-09.40<br />Kamis, 08.00-09.40</td>
+			<td>3.3113<br />3.3113</td>
+									<td>- Rahmat Mustafa Samik Ibrahim M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE602040 - <strong>Struktur Data &amp;  Algoritma</strong> (4 SKS, Term 3); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">63.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678491" target="_blank" title="678491">SDA</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Kamis, 15.00-16.40</td>
+			<td>A2.07 (Ged baru)<br />A2.07 (Ged baru)</td>
+									<td>-  Iis Solichah, S.Kom., M.Kom., M.Comp.Sc</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCM602241 - <strong>Teori Bahasa &amp; Automata</strong> (4 SKS, Term 4); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">64.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677651" target="_blank" title="677651">TBA-A (Blended)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Rabu, 14.00-15.40</td>
+			<td>3.3111<br />3.3111</td>
+									<td>- Dr. Dina Chahyati S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">65.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678518" target="_blank" title="678518">TBA-B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 10.00-11.40<br />Rabu, 10.00-11.40</td>
+			<td>2.2502<br />2.2404</td>
+									<td>- Ir. Suryana Setiawan M.Sc., Ph.D.<br/>- Dr. Dina Chahyati S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">66.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678513" target="_blank" title="678513">TBA-C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Rabu, 14.00-15.40</td>
+			<td>2.2604<br />2.2604</td>
+									<td>- Ir. Suryana Setiawan M.Sc., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE604099 - <strong>Tugas Akhir</strong> (6 SKS, Term 0); Kurikulum 01.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">67.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=681305" target="_blank" title="681305">Tugas Akhir</a></td>
+							<td>-</td>
+			<td colspan="4" class="ce inf">Mata kuliah spesial</td>
+					</tr>
+	</table>
+<h3>Kelas Bersama<a name="2">&nbsp;</a><a href="#top" style="font-size:0.8em">[&nbsp;top]</a></h3>
+<table class="box">
+	<tr>
+		<td class="head" colspan="7">Kode MK - <strong>Nama Mata Kuliah</strong> (Kredit, Term); Kurikulum</td>
+	</tr>
+	<tr>
+		<th>No.</th>
+		<th>Nama Kelas</th>
+				<th>Bahasa</th>
+		<th>Periode</th>
+		<th>Waktu</th>
+		<th>Ruang</th>
+		<th>Pengajar</th>
+			</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSCE604098 - <strong>Kerja Praktik</strong> (4 SKS, Term 7); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">68.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678151" target="_blank" title="678151">Kerja Praktik A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-15.30</td>
+			<td>A6.09 (Ged Baru)</td>
+									<td>-  Fatimah Azzahro, S.Kom., M.Kom., M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">69.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678158" target="_blank" title="678158">Kerja Praktik B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-15.30</td>
+			<td>A6.10 (Ged Baru)</td>
+									<td>-  Ichlasul Affan, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">70.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678160" target="_blank" title="678160">Kerja Praktik C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-15.30</td>
+			<td>A6.11 (Ged Baru)</td>
+									<td>-  Fathia Prinastiti Sunarso, S.Kom., M.Sc.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE601010 - <strong>Matematika Diskret 1</strong> (3 SKS, Term 1); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">71.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678448" target="_blank" title="678448">Matematika Diskret 1</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Kamis, 11.00-11.50<br />Jumat, 10.00-11.40</td>
+			<td>A1.10 (Ged Baru)<br />A1.10 (Ged Baru)</td>
+									<td>-  Arlisa Yuliawati, S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE601011 - <strong>Matematika Diskret 2</strong> (3 SKS, Term 2); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">72.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678863" target="_blank" title="678863">MatDis 2-B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 10.00-11.40<br />Rabu, 10.00-10.50<br />Rabu, 16.00-16.50</td>
+			<td>2.2306<br />3.3113<br />2.2306</td>
+									<td>-  Pudy Prima, S.T., M.Kom.<br/>- Dra. Belawati H. Widjaja, M.Sc., Ph.D.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">73.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678868" target="_blank" title="678868">MatDis 2-E</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Rabu, 11.00-11.50<br />Rabu, 16.00-16.50</td>
+			<td>2.2306<br />2.2306<br />2.2301</td>
+									<td>-  Meganingrum Arista Jiwanggi, S.Kom., M.Kom., M.Comp.Sc<br/>-  Theresia Veronika Rampisela, S.Si., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">74.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678870" target="_blank" title="678870">MatDis 2-F</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Rabu, 11.00-11.50<br />Rabu, 16.00-16.50</td>
+			<td>2.2404<br />3.3111<br />3.3111</td>
+									<td>-  Pudy Prima, S.T., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">75.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678879" target="_blank" title="678879">MatDis 2-G</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 15.00-16.40<br />Rabu, 11.00-11.50<br />Rabu, 16.00-16.50</td>
+			<td>3.3113<br />3.3113<br />3.3113</td>
+									<td>-  Arlisa Yuliawati, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">76.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677682" target="_blank" title="677682">MD 2-A (Blended IK)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 10.00-11.40<br />Rabu, 10.00-10.50<br />Rabu, 16.00-16.50</td>
+			<td>3.3114<br />3.3114<br />2.2402</td>
+									<td>- Dra. Belawati H. Widjaja, M.Sc., Ph.D.<br/>-  Arlisa Yuliawati, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">77.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677683" target="_blank" title="677683">MD 2-C (Blended SI)</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 10.00-11.40<br />Rabu, 10.00-10.50<br />Rabu, 16.00-16.50</td>
+			<td>2.2304<br />2.2304<br />2.2304</td>
+									<td>-  Theresia Veronika Rampisela, S.Si., M.Kom.<br/>-  Meganingrum Arista Jiwanggi, S.Kom., M.Kom., M.Comp.Sc</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE602091 - <strong>Metodologi Penelitian dan Penulisan Ilmiah</strong> (3 SKS, Term 6); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">78.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678129" target="_blank" title="678129">MPPI A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-10.30</td>
+			<td>2.2301</td>
+									<td>- Muhammad Hafizhuddin Hilman S.Kom., M.Kom., Ph.D.<br/>- Dr. Putu Wuri Handayani S.Kom., M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">79.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678140" target="_blank" title="678140">MPPI C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-10.30</td>
+			<td>2.2307</td>
+									<td>- Prof. Dr. Achmad Nizar Hidayanto S.Kom., M.Kom.<br/>- Muhammad Hafizhuddin Hilman S.Kom., M.Kom., Ph.D.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">80.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678144" target="_blank" title="678144">MPPI D</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-10.30</td>
+			<td>2.2404</td>
+									<td>- Muhammad Hafizhuddin Hilman S.Kom., M.Kom., Ph.D.<br/>-  Fathia Prinastiti Sunarso, S.Kom., M.Sc.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">81.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678147" target="_blank" title="678147">MPPI E</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-10.30</td>
+			<td>2.2405</td>
+									<td>-  Muhammad Anwar Ma&#039;sum, S.Kom., M.Kom.<br/>-  Annisa Monicha Sari, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">82.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678149" target="_blank" title="678149">MPPI F</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-10.30</td>
+			<td>2.2406</td>
+									<td>- Dr. Eng. Laksmita Rahadianti S.Kom., M.Sc.<br/>-  Annisa Monicha Sari, S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE602024 - <strong>Sistem Interaksi</strong> (3 SKS, Term 4); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">83.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678462" target="_blank" title="678462">Sistem Interaksi A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-08.50</td>
+			<td>A1.07 (Ged Baru)<br />A1.07 (Ged Baru)</td>
+									<td>-  Bintang Annisa Bagustari, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">84.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678467" target="_blank" title="678467">Sistem Interaksi B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-08.50</td>
+			<td>A1.08 (Ged Baru)<br />A1.08 (Ged Baru)</td>
+									<td>-  Suci Fadhilah, S.Kom., M.A.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">85.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678470" target="_blank" title="678470">Sistem Interaksi C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-08.50</td>
+			<td>A1.09 (Ged Baru)<br />A1.09 (Ged Baru)</td>
+									<td>- Dadan Hardianto S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">86.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678473" target="_blank" title="678473">Sistem Interaksi D</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-13.50</td>
+			<td>A1.09 (Ged Baru)<br />A1.09 (Ged Baru)</td>
+									<td>- Harry Budi Santoso M.Kom., Ph.D.<br/>-  Lintang Matahari Hasani, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">87.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678477" target="_blank" title="678477">Sistem Interaksi E</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-13.50</td>
+			<td>A1.10 (Ged Baru)<br />A1.10 (Ged Baru)</td>
+									<td>-  Bintang Annisa Bagustari, S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">88.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678480" target="_blank" title="678480">Sistem Interaksi F</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-13.50</td>
+			<td>A1.08 (Ged Baru)<br />A1.08 (Ged Baru)</td>
+									<td>-  Suci Fadhilah, S.Kom., M.A.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSGE602013 - <strong>Statistika dan Probabilitas</strong> (3 SKS, Term 4); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">89.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678452" target="_blank" title="678452">Statprob A</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-08.50</td>
+			<td>2.2502<br />2.2502</td>
+									<td>- Dr. Ika Alfina S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">90.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678454" target="_blank" title="678454">Statprob B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-08.50</td>
+			<td>2.2602<br />2.2602</td>
+									<td>-  Kurniawati Azizah, S.T., M.Phil.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">91.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678456" target="_blank" title="678456">Statprob C</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-09.40<br />Rabu, 08.00-08.50</td>
+			<td>2.2604<br />2.2604</td>
+									<td>-  Aruni Yasmin Azizah, S.Kom., M.Comp.Sc</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">92.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678457" target="_blank" title="678457">Statprob F</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-13.50</td>
+			<td>2.2602<br />2.2604</td>
+									<td>-  Kurniawati Azizah, S.T., M.Phil.</td>
+								</tr>
+			<tr class="alt">
+		<td class="ri">93.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677665" target="_blank" title="677665">StatprobD-Blended IK</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-13.50</td>
+			<td>3.3111<br />3.3111</td>
+									<td>- Dr. Ika Alfina S.Kom., M.Kom.</td>
+								</tr>
+			<tr class="x">
+		<td class="ri">94.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677666" target="_blank" title="677666">StatprobE-Blended SI</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-14.40<br />Rabu, 13.00-13.50</td>
+			<td>2.2402<br />2.2402</td>
+									<td>-  Aruni Yasmin Azizah, S.Kom., M.Comp.Sc</td>
+								</tr>
+	</table>
+<h3>Kelas Eksternal<a name="3">&nbsp;</a><a href="#top" style="font-size:0.8em">[&nbsp;top]</a></h3>
+<table class="box">
+	<tr>
+		<td class="head" colspan="7">Kode MK - <strong>Nama Mata Kuliah</strong> (Kredit, Term); Kurikulum</td>
+	</tr>
+	<tr>
+		<th>No.</th>
+		<th>Nama Kelas</th>
+				<th>Bahasa</th>
+		<th>Periode</th>
+		<th>Waktu</th>
+		<th>Ruang</th>
+		<th>Pengajar</th>
+			</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIE604284 - <strong>Analitika Media Sosial</strong> (3 SKS, Term 5); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">95.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678039" target="_blank" title="678039">Anmedsos</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022<br />07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 16.00-16.50<br />Kamis, 15.00-16.40</td>
+			<td>2.2302<br />2.2302</td>
+									<td>- Rahmad Mahendra S.Kom., M.Sc.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIE604160 - <strong>E-Dagang</strong> (3 SKS, Term 5); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">96.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=683246" target="_blank" title="683246">E-Dagang B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Rabu, 13.00-15.30</td>
+			<td>2.2306</td>
+									<td></td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">LWPE610029 - <strong>Hukum Antar Tata Hukum</strong> (3 SKS, Term 4); Kurikulum 07.00.05.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">97.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677771" target="_blank" title="677771">Single Degree Prog.</a></td>
+						<td>Inggris</td>
+						<td nowrap>07/02/2022 - 27/05/2022</td>
+			<td nowrap>Kamis, 08.00-10.30</td>
+			<td>E 203 (KKI)</td>
+									<td>- Yu Un Oppusunggu S.H., LL.M., Ph.D.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIE604275 - <strong>Integrasi Aplikasi Perusahaan</strong> (3 SKS, Term 5); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">98.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678002" target="_blank" title="678002">EAI</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 08.00-10.30</td>
+			<td>A6.10 (Ged Baru)</td>
+									<td>-  Triando, S.Kom., M.Sc.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIM601191 - <strong>Komunikasi Bisnis dan Teknis</strong> (3 SKS, Term 1); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">99.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678068" target="_blank" title="678068">Kombistek B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Rabu, 13.00-15.30</td>
+			<td>A6.11 (Ged Baru)</td>
+									<td>-  Fathia Prinastiti Sunarso, S.Kom., M.Sc.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIE604266 - <strong>Konfigurasi ERP</strong> (3 SKS, Term 5); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">100.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678013" target="_blank" title="678013">Konfigurasi ERP</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Rabu, 13.00-15.30</td>
+			<td>A6.12 (Ged Baru)</td>
+									<td>- Ir. Agung Terminanto, M.B.A.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIE604276 - <strong>Manajemen Infrastruktur TI</strong> (3 SKS, Term 5); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">101.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=678007" target="_blank" title="678007">MITI</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-15.30</td>
+			<td>2.2303</td>
+									<td>-  Ari Wibisono, S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIE604378 - <strong>Manajemen Layanan TI</strong> (3 SKS, Term 5); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">102.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=683407" target="_blank" title="683407">MLTI B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Senin, 13.00-15.30</td>
+			<td>2.2603</td>
+									<td>-  Hafizh Rafizal Adnan, S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIE604180 - <strong>Manajemen Pengetahuan</strong> (3 SKS, Term 5); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">103.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=683738" target="_blank" title="683738">KM B</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/01/2022 - 17/06/2022</td>
+			<td nowrap>Jumat, 13.00-15.30</td>
+			<td>2.2306</td>
+									<td></td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIM603182 - <strong>Manajemen Sistem Informasi</strong> (3 SKS, Term 6); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">104.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=683374" target="_blank" title="683374">MSI D</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Selasa, 13.00-15.30</td>
+			<td>2.2304</td>
+									<td>- Heri Kurniawan S.Kom., M.Kom.</td>
+								</tr>
+			<tr>
+		<th class="sub border2 pad2" colspan="7">CSIE604271 - <strong>Penambangan Data &amp; Inteligensia Bisnis</strong> (3 SKS, Term 5); Kurikulum 06.00.12.01-2020</th>
+	</tr>
+			
+		<tr class="alt">
+		<td class="ri">105.</td>
+		<td nowrap>Kelas <a href="/main/CoursePlan/ClassInfo?cc=677981" target="_blank" title="677981">PDIB</a></td>
+						<td>Indonesia</td>
+						<td nowrap>07/02/2022 - 17/06/2022</td>
+			<td nowrap>Rabu, 08.00-10.30</td>
+			<td>A2.09 (Ged Baru)</td>
+									<td>-  Ika Chandra Hapsari, S.Kom., M.Kom.</td>
+								</tr>
+	</table>
+
+
+</td></tr></table></div>
+																	</div>
+							</div>
+						</div>
+					</div>
+
+					<div style="clear:both;border-bottom:1px solid #DDD"><!-- --></div>
+					<div class="foot">
+						<div style="float:left">&copy; Copyright 2006 - 2022 <a href="http://www.ui.ac.id" target="_blank">Universitas Indonesia</a> - <a href="/main/Welcome/">Home</a> | <a href="/main/Authentication/Logout">Logout</a> | <a href="/main/Help/Manual">Manual</a> | <a href="/main/System/Sitemap" title="Sitemap">Sitemap</a> | Execution time: 0.311 s, 6 queries</div>
+						<div style="float:right">Direktorat Pelayanan dan Pengembangan Sistem Informasi</div>
+						<div class="clear"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div id="t_f"><div><div>&nbsp;</div></div></div>
+	</div>
+</body>
+</html>
