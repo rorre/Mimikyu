@@ -8,6 +8,9 @@ import staticPlugin from "@elysiajs/static";
 import { file } from "bun";
 import { recordsTable } from "./db";
 import { asc, eq } from "drizzle-orm";
+import { chdir } from "process";
+
+chdir(import.meta.dir);
 
 /* ============================================ */
 /* Database setup */
