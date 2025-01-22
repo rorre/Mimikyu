@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://static1.e926.net/data/81/31/8131c12dafa8c460bb748e35573a26fe.png" />
   <h1 align="center">Mimikyu</h1>
-  <p align="center">A mock server of a certain website during certain event</p>
+  <p align="center">A mock server of a certain website during certain event. Now with gamification!</p>
 </div>
 
 ## Setting Up
