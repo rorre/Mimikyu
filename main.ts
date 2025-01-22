@@ -1,10 +1,44 @@
 import fs from "fs";
 
-import { Elysia, file } from "elysia";
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient } from "@libsql/client";
+import { Elysia, redirect, t } from "elysia";
 import { randomUUID } from "crypto";
 import staticPlugin from "@elysiajs/static";
+import { file } from "bun";
+import { recordsTable } from "./db";
+import { asc, eq } from "drizzle-orm";
 
-const app = new Elysia().use(staticPlugin({ prefix: "/" }));
+/* ============================================ */
+/* Database setup */
+const turso = createClient({
+  url: process.env.TURSO_DATABASE_URL!,
+  authToken: process.env.TURSO_AUTH_TOKEN,
+});
+
+const db = drizzle(turso);
+
+/* ============================================ */
+
+const app = new Elysia({
+  cookie: {
+    secrets: Bun.env.SECRET,
+    sign: ["run"],
+  },
+})
+  .use(staticPlugin({ prefix: "/" }))
+  .derive(({ cookie }) => {
+    const cookieStr = cookie["run"].value ?? "";
+    if (cookieStr === "") return { user: null };
+
+    const userData = JSON.parse(atob(cookieStr));
+    return {
+      user: userData as unknown as {
+        name: string;
+        startTime: number;
+      },
+    };
+  });
 
 interface FakeData {
   isError: boolean;
@@ -93,10 +127,25 @@ async function simulate(
 }
 
 app.onAfterHandle(async ({ request, cookie, error, redirect }) => {
+  if (!request.url.includes("/main")) return;
   const [res, data] = await simulate(request, cookie, error, redirect);
   consoleLogger(request, data);
 
   if (res) return res;
+});
+
+app.onBeforeHandle(({ request, cookie }) => {
+  if (request.url.includes("/main/") && !cookie["run"].value) {
+    return redirect("/");
+  }
+
+  if (
+    request.url.includes("/main/") &&
+    !request.url.includes("Authentication") &&
+    (!cookie["Mojavi"].value || !cookie["siakng_cc"].value)
+  ) {
+    return redirect("/main/Authentication/");
+  }
 });
 
 app.get("/main/Authentication/", () => {
@@ -105,9 +154,10 @@ app.get("/main/Authentication/", () => {
 
 app.post("/main/Authentication/Index", ({ cookie }) => {
   let mojaviUid = randomUUID();
+
   cookie["Mojavi"].value = mojaviUid;
   cookie["siakng_cc"].value = "noOneCaresAboutThisOneLOL";
-  return file("response/authDone.html");
+  return new Response(file("response/authDone.html"));
 });
 
 app.get("/main/Authentication/ChangeRole", ({ redirect }) => {
@@ -127,22 +177,104 @@ app.get("/main/CoursePlan/CoursePlanEdit", () => {
   return file(fName);
 });
 
-app.post("/main/CoursePlan/CoursePlanSave", ({ body, redirect }) => {
-  console.log("Body:");
-  console.log(body);
-  return redirect("/main/CoursePlan/CoursePlanDone");
-});
+app.post(
+  "/main/CoursePlan/CoursePlanSave",
+  async ({ body, redirect, user }) => {
+    if (!user) return redirect("/");
 
-app.get("/main/CoursePlan/CoursePlanDone", () => {
-  return "yee";
+    await db
+      .update(recordsTable)
+      .set({
+        body: JSON.stringify(body),
+        timeElapsed: new Date().getTime() - user.startTime,
+      })
+      .where(eq(recordsTable.name, user.name));
+    return redirect("/main/CoursePlan/CoursePlanDone");
+  }
+);
+
+app.get("/main/CoursePlan/CoursePlanDone", async ({ user }) => {
+  if (!user) return redirect("/");
+
+  const record = await db
+    .select()
+    .from(recordsTable)
+    .where(eq(recordsTable.name, user.name));
+  if (record.length == 0) return redirect("/");
+
+  const time = record[0].timeElapsed;
+  return `Congrats ${user.name}! Your time is: ${time}ms. Your data is:\n\n${record[0].body}`;
 });
 
 app.get("/main/Schedule/Index", () => {
   return file("response/schedule.html");
 });
 
+/* ============================================
+   From this point is not relevant to mocking
+   ============================================ */
+
 app.get("/", () => {
-  return "Hello World!";
+  return file("response/index.html");
+});
+
+app.post(
+  "/start",
+  async ({ body, cookie }) => {
+    const result = await db
+      .select()
+      .from(recordsTable)
+      .where(eq(recordsTable.name, body.name));
+    if (result.length == 0) {
+      const data = {
+        name: body.name,
+        password: await Bun.password.hash(body.password),
+      };
+      await db.insert(recordsTable).values(data);
+
+      result.push({
+        ...data,
+        id: -1,
+        body: null,
+        timeElapsed: null,
+      });
+    }
+
+    const record = result[0];
+    if (!(await Bun.password.verify(body.password, record.password))) {
+      return new Response("Wrong password", { status: 400 });
+    }
+
+    const value = { name: body.name, startTime: new Date().getTime() };
+
+    cookie["run"].set({
+      value: btoa(JSON.stringify(value)),
+    });
+    return redirect("/main/Authentication/");
+  },
+  {
+    body: t.Object({
+      name: t.String({ minLength: 1 }),
+      password: t.String({ minLength: 8 }),
+    }),
+  }
+);
+
+app.get("/leaderboard", async () => {
+  const records = await db
+    .select()
+    .from(recordsTable)
+    .orderBy(asc(recordsTable.timeElapsed))
+    .limit(50);
+
+  return (
+    "Leaderboard: \n" +
+    records
+      .map((record, i) => {
+        return `${i + 1}. ${record.name} - ${record.timeElapsed}ms`;
+      })
+      .join("\n")
+  );
 });
 
 app.listen(3000, () => {
