@@ -10,7 +10,9 @@ import { recordsTable } from "./db";
 import { asc, eq } from "drizzle-orm";
 import { chdir } from "process";
 
-chdir(import.meta.dir);
+try {
+  chdir(import.meta.dir);
+} catch {}
 
 /* ============================================ */
 /* Database setup */
