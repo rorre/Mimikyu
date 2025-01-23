@@ -6,4 +6,5 @@ export const recordsTable = sqliteTable("records", {
   password: text().notNull(),
   timeElapsed: int(),
   body: text(),
+  isBot: int(),
 });

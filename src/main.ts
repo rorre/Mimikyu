@@ -2,7 +2,7 @@ import fs from "fs";
 
 import { drizzle } from "drizzle-orm/libsql";
 import { createClient } from "@libsql/client";
-import { Elysia, redirect, t } from "elysia";
+import { Elysia, error, redirect, t } from "elysia";
 import { randomUUID } from "crypto";
 import staticPlugin from "@elysiajs/static";
 import { file } from "bun";
@@ -169,7 +169,7 @@ app.get("/main/Authentication/ChangeRole", ({ redirect }) => {
   return redirect("/main/CoursePlan/CoursePlanEdit");
 });
 
-app.get("/main/CoursePlan/CoursePlanEdit", () => {
+app.get("/main/CoursePlan/CoursePlanEdit", async ({ headers }) => {
   let fName;
   const val = Math.random();
   if (val < 0.33 || fs.existsSync(".noerr")) {
@@ -179,19 +179,51 @@ app.get("/main/CoursePlan/CoursePlanEdit", () => {
   } else {
     fName = "response/irsEmpty.html";
   }
-  return file(fName);
+
+  if (headers["X-BOT"]) {
+    return file(fName);
+  }
+
+  const irs = await file(fName).text();
+
+  return new Response(
+    irs.replaceAll(
+      "<!--CAPTCHA-->",
+      `<div class="cf-turnstile" data-sitekey="${Bun.env
+        .CAPTCHA_SITE_KEY!}"></div><br/>`
+    ),
+    {
+      headers: {
+        "content-type": "text/html",
+      },
+    }
+  );
 });
 
 app.post(
   "/main/CoursePlan/CoursePlanSave",
-  async ({ body, redirect, user }) => {
+  async ({ body, redirect, user, headers, request, server }) => {
     if (!user) return redirect("/");
+
+    const isBot = !!headers["X-BOT"];
+    if (!isBot) {
+      const response = await verifyCloudflare(
+        // @ts-ignore
+        body["cf-turnstile-response"],
+        server?.requestIP(request)?.address ?? "127.0.0.1"
+      );
+
+      if (!response.success) {
+        return error("Bad Request", "Cloudflare no likey :/");
+      }
+    }
 
     await db
       .update(recordsTable)
       .set({
         body: JSON.stringify(body),
         timeElapsed: new Date().getTime() - user.startTime,
+        isBot: isBot ? 1 : 0,
       })
       .where(eq(recordsTable.name, user.name));
     return redirect("/main/CoursePlan/CoursePlanDone");
@@ -219,6 +251,23 @@ app.get("/main/Schedule/Index", () => {
    From this point is not relevant to mocking
    ============================================ */
 
+async function verifyCloudflare(token: string, ip: string) {
+  const url = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+  const result = await fetch(url, {
+    body: JSON.stringify({
+      secret: Bun.env.CAPTCHA_SECRET_KEY!,
+      response: token,
+      remoteip: ip,
+    }),
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return await result.json();
+}
+
 app.get("/", () => {
   return file("response/index.html");
 });
@@ -242,6 +291,7 @@ app.post(
         id: -1,
         body: null,
         timeElapsed: null,
+        isBot: 0,
       });
     }
 
