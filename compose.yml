@@ -1,0 +1,11 @@
+services:
+  mimikyu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - SECRET=""
+      - TURSO_DATABASE_URL=""
+      - TURSO_AUTH_TOKEN=""
