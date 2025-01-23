@@ -12,24 +12,6 @@ COPY ./src ./src
 
 ENV NODE_ENV=production
 
-RUN bun build \
-  --compile \
-  --minify-whitespace \
-  --minify-syntax \
-  --target bun \
-  --outfile server \
-  ./src/main.ts
-
-FROM gcr.io/distroless/base
-
-WORKDIR /app
-
-COPY --from=build /app/server server
-COPY --from=build /app/src/public public
-COPY --from=public /app/src/response response
-
-ENV NODE_ENV=production
-
-CMD ["./server"]
+CMD ["bun", "run", "src/main.ts"]
 
 EXPOSE 3000
