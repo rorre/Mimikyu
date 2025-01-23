@@ -132,7 +132,7 @@ async function simulate(
 }
 
 app.onAfterHandle(async ({ request, cookie, error, redirect }) => {
-  if (!request.url.includes("/main")) return;
+  if (!request.url.includes("/main/")) return;
   const [res, data] = await simulate(request, cookie, error, redirect);
   consoleLogger(request, data);
 
