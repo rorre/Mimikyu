@@ -132,8 +132,13 @@ async function simulate(
 }
 
 app.onAfterHandle(async ({ request, cookie, error, redirect }) => {
-  if (!request.url.includes("/main/") || request.url.includes("/main-www/"))
+  const urlWithoutQueryOrHash = request.url.split(/[?#]/)[0];
+  if (
+    !urlWithoutQueryOrHash.includes("/main/") ||
+    urlWithoutQueryOrHash.includes("/main-www/")
+  )
     return;
+
   const [res, data] = await simulate(request, cookie, error, redirect);
   consoleLogger(request, data);
 
