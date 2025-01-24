@@ -175,7 +175,7 @@ app.get("/main/Authentication/ChangeRole", ({ redirect }) => {
   return redirect("/main/CoursePlan/CoursePlanEdit");
 });
 
-app.get("/main/CoursePlan/CoursePlanEdit", async ({ headers }) => {
+app.get("/main/CoursePlan/CoursePlanEdit", async ({ cookie }) => {
   let fName;
   const val = Math.random();
   if (val < 0.33 || fs.existsSync(".noerr")) {
@@ -186,7 +186,7 @@ app.get("/main/CoursePlan/CoursePlanEdit", async ({ headers }) => {
     fName = "response/irsEmpty.html";
   }
 
-  if (headers["X-BOT"]) {
+  if (cookie["X-BOT"].value) {
     return file(fName);
   }
 
@@ -208,10 +208,10 @@ app.get("/main/CoursePlan/CoursePlanEdit", async ({ headers }) => {
 
 app.post(
   "/main/CoursePlan/CoursePlanSave",
-  async ({ body, redirect, user, headers, request, server }) => {
+  async ({ body, redirect, user, cookie, request, server }) => {
     if (!user) return redirect("/");
 
-    const isBot = !!headers["X-BOT"];
+    const isBot = cookie["X-BOT"].value != undefined;
     if (!isBot) {
       const response = await verifyCloudflare(
         // @ts-ignore
