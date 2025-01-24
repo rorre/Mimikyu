@@ -257,16 +257,18 @@ app.get("/main/CoursePlan/CoursePlanDone", async ({ user, query }) => {
 
   const time = record[0].timeElapsed;
   const congratsPage = await file("response/finish.html").text();
-  const original = congratsPage.replace("XXXX", time?.toString() ?? "?");
+  let response = congratsPage.replace("XXXX", time?.toString() ?? "?");
 
   if (query.better == "0") {
-    return original.replace(
+    response = response.replace(
       "You have finished in",
       "Unfortunately, you did not beat your time in"
     );
   }
 
-  return original;
+  return new Response(response, {
+    headers: { "content-type": "text/html" },
+  });
 });
 
 app.get("/main/Schedule/Index", () => {
@@ -350,7 +352,7 @@ app.get("/leaderboard", async () => {
     .limit(50);
 
   const leaderboardPage = await file("response/leaderboard.html").text();
-  return leaderboardPage.replace(
+  const response = leaderboardPage.replace(
     "<!--LEADERBOARD-->",
     records
       .map((record, i) => {
@@ -362,6 +364,37 @@ app.get("/leaderboard", async () => {
       })
       .join("\n")
   );
+
+  return new Response(response, {
+    headers: { "content-type": "text/html" },
+  });
+});
+
+app.get("/leaderboard/bot", async () => {
+  const records = await db
+    .select()
+    .from(recordsTable)
+    .orderBy(asc(recordsTable.timeElapsed))
+    .where(eq(recordsTable.isBot, 1))
+    .limit(50);
+
+  const leaderboardPage = await file("response/leaderboard.html").text();
+  const response = leaderboardPage.replace(
+    "<!--LEADERBOARD-->",
+    records
+      .map((record, i) => {
+        return `<tr class="hover:bg-gray-100">
+          <td class="py-2 px-4 border-b">${i + 1}</td>
+          <td class="py-2 px-4 border-b">${record.name}</td>
+          <td class="py-2 px-4 border-b">${record.timeElapsed}</td>
+        </tr>`;
+      })
+      .join("\n")
+  );
+
+  return new Response(response, {
+    headers: { "content-type": "text/html" },
+  });
 });
 
 app.listen(3000, () => {
