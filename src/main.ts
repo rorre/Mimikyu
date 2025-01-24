@@ -241,7 +241,8 @@ app.get("/main/CoursePlan/CoursePlanDone", async ({ user }) => {
   if (record.length == 0) return redirect("/");
 
   const time = record[0].timeElapsed;
-  return `Congrats ${user.name}! Your time is: ${time}ms. Your data is:\n\n${record[0].body}`;
+  const congratsPage = await file("response/finish.html").text();
+  return congratsPage.replace("XXXX", time?.toString() ?? "?");
 });
 
 app.get("/main/Schedule/Index", () => {
@@ -321,13 +322,19 @@ app.get("/leaderboard", async () => {
     .select()
     .from(recordsTable)
     .orderBy(asc(recordsTable.timeElapsed))
+    .where(eq(recordsTable.isBot, 0))
     .limit(50);
 
-  return (
-    "Leaderboard: \n" +
+  const leaderboardPage = await file("response/leaderboard.html").text();
+  return leaderboardPage.replace(
+    "<!--LEADERBOARD-->",
     records
       .map((record, i) => {
-        return `${i + 1}. ${record.name} - ${record.timeElapsed}ms`;
+        return `<tr class="hover:bg-gray-100">
+          <td class="py-2 px-4 border-b">${i + 1}</td>
+          <td class="py-2 px-4 border-b">${record.name}</td>
+          <td class="py-2 px-4 border-b">${record.timeElapsed}</td>
+        </tr>`;
       })
       .join("\n")
   );
