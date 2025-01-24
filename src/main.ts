@@ -219,19 +219,29 @@ app.post(
       }
     }
 
+    const existing = await db
+      .select()
+      .from(recordsTable)
+      .where(eq(recordsTable.name, user.name));
+
+    const delta = new Date().getTime() - user.startTime;
+    const isBetter = (existing[0]?.timeElapsed ?? 0) > delta;
+
     await db
       .update(recordsTable)
       .set({
         body: JSON.stringify(body),
-        timeElapsed: new Date().getTime() - user.startTime,
+        timeElapsed: delta,
         isBot: isBot ? 1 : 0,
       })
       .where(eq(recordsTable.name, user.name));
-    return redirect("/main/CoursePlan/CoursePlanDone");
+    return redirect(
+      `/main/CoursePlan/CoursePlanDone?better=${isBetter ? 1 : 0}`
+    );
   }
 );
 
-app.get("/main/CoursePlan/CoursePlanDone", async ({ user }) => {
+app.get("/main/CoursePlan/CoursePlanDone", async ({ user, query }) => {
   if (!user) return redirect("/");
 
   const record = await db
@@ -242,7 +252,16 @@ app.get("/main/CoursePlan/CoursePlanDone", async ({ user }) => {
 
   const time = record[0].timeElapsed;
   const congratsPage = await file("response/finish.html").text();
-  return congratsPage.replace("XXXX", time?.toString() ?? "?");
+  const original = congratsPage.replace("XXXX", time?.toString() ?? "?");
+
+  if (query.better == "0") {
+    return original.replace(
+      "You have finished in",
+      "Unfortunately, you did not beat your time in"
+    );
+  }
+
+  return original;
 });
 
 app.get("/main/Schedule/Index", () => {
