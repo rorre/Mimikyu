@@ -271,10 +271,6 @@ app.get("/main/CoursePlan/CoursePlanDone", async ({ user, query }) => {
   });
 });
 
-app.get("/main/Schedule/Index", () => {
-  return file("response/schedule.html");
-});
-
 /* ============================================
    From this point is not relevant to mocking
    ============================================ */
