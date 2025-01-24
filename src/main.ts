@@ -131,7 +131,7 @@ async function simulate(
   return [null, data] as const;
 }
 
-app.onAfterHandle(async ({ request, cookie, error, redirect }) => {
+app.onBeforeHandle(async ({ request, cookie, error, redirect }) => {
   const urlWithoutQueryOrHash = request.url.split(/[?#]/)[0];
   if (
     !urlWithoutQueryOrHash.includes("/main/") ||
