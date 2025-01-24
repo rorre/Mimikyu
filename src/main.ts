@@ -230,7 +230,7 @@ app.post(
       .where(eq(recordsTable.name, user.name));
 
     const delta = new Date().getTime() - user.startTime;
-    const isBetter = (existing[0]?.timeElapsed ?? 0) > delta;
+    const isBetter = (existing[0]?.timeElapsed ?? delta + 1) > delta;
 
     await db
       .update(recordsTable)
