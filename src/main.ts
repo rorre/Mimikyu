@@ -329,14 +329,18 @@ app.post(
       return new Response("Wrong password", { status: 400 });
     }
 
-    const value = { name: body.name, startTime: new Date().getTime(), isBot: body.isBotRun  == "on"};
+    const value = {
+      name: body.name,
+      startTime: new Date().getTime(),
+      isBot: body.isBotRun == "on",
+    };
 
     cookie["run"].set({
       value: btoa(JSON.stringify(value)),
     });
     cookie["X-BOT"].set({
-      value: body.isBotRun == "on"? "t" : "f"
-    })
+      value: body.isBotRun == "on" ? "t" : "f",
+    });
     return redirect("/main/Authentication/");
   },
   {
