@@ -1,53 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Mimikyu</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
-  <link rel="icon" href="favicon.png">
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mimikyu</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="icon" href="favicon.png" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
 
-<body class="bg-gray-100 text-gray-800">
-  <nav class="bg-white shadow">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-      <div class="flex justify-between items-center">
-        <div class="text-lg font-bold">Mimikyu</div>
-        <div>
-          <a href="/leaderboard" class="hover:underline mx-2">Leaderboard</a>
-          <a href="/leaderboard/bot" class="hover:underline mx-2">Bot Leaderboard</a>
-          <a href="/" class="hover:underline mx-2">Home</a>
+  <body class="bg-gray-100 text-gray-800">
+    <nav class="bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-lg font-bold">Mimikyu</div>
+          <div>
+            <a href="/leaderboard" class="hover:underline mx-2">Leaderboard</a>
+            <a href="/leaderboard/bot" class="hover:underline mx-2"
+              >Bot Leaderboard</a
+            >
+            <a href="/" class="hover:underline mx-2">Home</a>
+          </div>
         </div>
       </div>
+    </nav>
+
+    <div class="max-w-2xl mx-auto p-6">
+      <h1 class="text-3xl font-bold mb-4">Welcome!</h1>
+      <p class="mb-4">
+        This is a website to simulate a certain event of a certain website. With
+        leaderboards!
+      </p>
+
+      <hr class="my-6" />
+
+      <p class="mb-4">To participate, simply start here:</p>
+      <form action="/start" method="post" class="bg-white p-4 rounded shadow">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium mb-1">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="border border-gray-300 rounded p-2 w-full"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-medium mb-1"
+            >Password:</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            class="border border-gray-300 rounded p-2 w-full"
+          />
+        </div>
+
+        <div class="mb-4">
+          <input type="checkbox" id="isbotrun" name="isBotRun" />
+          <label for="isbotrun">Is bot run?</label>
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600"
+        >
+          Start
+        </button>
+      </form>
     </div>
-  </nav>
-
-  <div class="max-w-2xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-4">Welcome!</h1>
-    <p class="mb-4">This is a website to simulate a certain event of a certain website. With leaderboards!</p>
-    
-    <hr class="my-6"/>
-
-    <p class="mb-4">To participate, simply start here:</p>
-    <form action="/start" method="post" class="bg-white p-4 rounded shadow">
-      <div class="mb-4">
-        <label for="name" class="block text-sm font-medium mb-1">Name:</label>
-        <input type="text" id="name" name="name" required class="border border-gray-300 rounded p-2 w-full" />
-      </div>
-      <div class="mb-4">
-        <label for="password" class="block text-sm font-medium mb-1">Password:</label>
-        <input type="password" id="password" name="password" required class="border border-gray-300 rounded p-2 w-full" />
-      </div>
-
-      <div class="mb-4">
-        <input type="checkbox" id="isbotrun" name="isBotRun" />
-        <label for="isbotrun">Is bot run?</label>
-      </div>
-      <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600">Start</button>
-    </form>
-  </div>
-  <a href="https://github.com/rorre/Mimikyu" target="_blank" style="position: sticky; bottom: 1rem; left: 1rem; background-color: #2d3748; color: white; padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); text-align: center; transition: background-color 0.3s;">    <i class="fab fa-github fa-2xl"></i>
-  </a></body>
+    <a
+      href="https://github.com/rorre/Mimikyu"
+      target="_blank"
+      style="
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        background-color: #2d3748;
+        color: white;
+        padding: 0.75rem;
+        border-radius: 99999999999px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: background-color 0.3s;
+      "
+    >
+      <i class="fab fa-github fa-2xl"></i>
+    </a>
+  </body>
 </html>
