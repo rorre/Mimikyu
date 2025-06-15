@@ -9,3 +9,5 @@ services:
       - SECRET=""
       - TURSO_DATABASE_URL=""
       - TURSO_AUTH_TOKEN=""
+      - CAPTCHA_SITE_KEY=""
+      - CAPTCHA_SECRET_KEY=""
