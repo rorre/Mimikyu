@@ -41,6 +41,7 @@ const app = new Elysia({
       user: userData as unknown as {
         name: string;
         startTime: number;
+        isBot: boolean;
       },
     };
   });
@@ -186,7 +187,7 @@ app.get("/main/CoursePlan/CoursePlanEdit", async ({ cookie }) => {
     fName = "response/irsEmpty.html";
   }
 
-  if (cookie["X-BOT"].value) {
+  if (cookie["X-BOT"].value == "t") {
     return file(fName);
   }
 
@@ -211,7 +212,11 @@ app.post(
   async ({ body, redirect, user, cookie, request, server }) => {
     if (!user) return redirect("/");
 
-    const isBot = cookie["X-BOT"].value != undefined;
+    const isBot = cookie["X-BOT"].value == "t";
+    if (user.isBot && !isBot) {
+      return error("Bad Request", "Nuh uh");
+    }
+
     if (!isBot) {
       const response = await verifyCloudflare(
         // @ts-ignore
@@ -315,7 +320,7 @@ app.post(
         id: -1,
         body: null,
         timeElapsed: null,
-        isBot: 0,
+        isBot: body.isBotRun == "on" ? 1 : 0,
       });
     }
 
@@ -324,17 +329,21 @@ app.post(
       return new Response("Wrong password", { status: 400 });
     }
 
-    const value = { name: body.name, startTime: new Date().getTime() };
+    const value = { name: body.name, startTime: new Date().getTime(), isBot: body.isBotRun  == "on"};
 
     cookie["run"].set({
       value: btoa(JSON.stringify(value)),
     });
+    cookie["X-BOT"].set({
+      value: body.isBotRun == "on"? "t" : "f"
+    })
     return redirect("/main/Authentication/");
   },
   {
     body: t.Object({
       name: t.String({ minLength: 1 }),
       password: t.String({ minLength: 8 }),
+      isBotRun: t.Optional(t.String()),
     }),
   }
 );
