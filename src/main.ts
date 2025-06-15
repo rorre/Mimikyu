@@ -14,11 +14,37 @@ try {
   chdir(import.meta.dir);
 } catch {}
 
+interface UserData {
+  sessionId: string;
+  name: string;
+  startTime: number;
+  isBot: boolean;
+}
+
+/* ============================================ */
+/* const */
+const MOCK_CONFIG = {
+  bot: {
+    delayTime: 5000,
+    overloadProbability: 0.8,
+    wrongResponseCodeProbability: 0.5,
+    deauthProbability: 0.5,
+    successIrsProbability: 0.33,
+  },
+  human: {
+    delayTime: 5000,
+    overloadProbability: 0.5,
+    wrongResponseCodeProbability: 0.2,
+    deauthProbability: 0.2,
+    successIrsProbability: 0.5,
+  },
+};
+
 /* ============================================ */
 /* Database setup */
 const turso = createClient({
-  url: process.env.TURSO_DATABASE_URL!,
-  authToken: process.env.TURSO_AUTH_TOKEN,
+  url: Bun.env.TURSO_DATABASE_URL!,
+  authToken: Bun.env.TURSO_AUTH_TOKEN,
 });
 
 const db = drizzle(turso);
@@ -28,7 +54,7 @@ const db = drizzle(turso);
 const app = new Elysia({
   cookie: {
     secrets: Bun.env.SECRET,
-    sign: ["run"],
+    sign: ["run", "Mojavi"],
   },
 })
   .use(staticPlugin({ prefix: "/" }))
@@ -38,11 +64,7 @@ const app = new Elysia({
 
     const userData = JSON.parse(atob(cookieStr));
     return {
-      user: userData as unknown as {
-        name: string;
-        startTime: number;
-        isBot: boolean;
-      },
+      user: userData as unknown as UserData,
     };
   });
 
@@ -84,8 +106,10 @@ async function simulate(
   request: Request,
   cookie: Record<string, any>,
   error: Function,
-  redirect: Function
+  redirect: Function,
+  user: UserData
 ) {
+  const config = user.isBot ? MOCK_CONFIG.bot : MOCK_CONFIG.human;
   const data: FakeData = {
     isError: false,
     isWrongStatus: false,
@@ -98,16 +122,16 @@ async function simulate(
   }
 
   // Simulates siak server + indihome
-  let delayTime = Math.random() * 5000;
+  let delayTime = Math.random() * config.delayTime;
   await sleep(delayTime);
   data.delayTime = delayTime;
 
   // Simulates overload error
-  let shouldContinue = Math.random() > 0.8;
+  let shouldContinue = Math.random() > config.deauthProbability;
   data.isError = !shouldContinue;
 
   if (!shouldContinue) {
-    let isWrongStatus = Math.random() > 0.5;
+    let isWrongStatus = Math.random() > config.wrongResponseCodeProbability;
     data.isWrongStatus = isWrongStatus;
 
     let fileId = `siakOverload${Math.round(Math.random()).toString()}.html`;
@@ -120,7 +144,7 @@ async function simulate(
 
   // Simulates de-auth error
   if (request.url.indexOf("/main/Authentication/") == -1) {
-    let shouldReAuth = Math.random() > 0.5;
+    let shouldReAuth = Math.random() > config.deauthProbability;
     if (!cookie.Mojavi) shouldReAuth = true;
     data.isReauth = shouldReAuth;
 
@@ -132,15 +156,16 @@ async function simulate(
   return [null, data] as const;
 }
 
-app.onBeforeHandle(async ({ request, cookie, error, redirect }) => {
+app.onBeforeHandle(async ({ request, cookie, error, redirect, user }) => {
   const urlWithoutQueryOrHash = request.url.split(/[?#]/)[0];
   if (
     !urlWithoutQueryOrHash.includes("/main/") ||
-    urlWithoutQueryOrHash.includes("/main-www/")
+    urlWithoutQueryOrHash.includes("/main-www/") ||
+    !user
   )
     return;
 
-  const [res, data] = await simulate(request, cookie, error, redirect);
+  const [res, data] = await simulate(request, cookie, error, redirect, user);
   consoleLogger(request, data);
 
   if (res) return res;
@@ -164,30 +189,40 @@ app.get("/main/Authentication/", () => {
   return file("response/auth.html");
 });
 
-app.post("/main/Authentication/Index", ({ cookie }) => {
-  let mojaviUid = randomUUID();
-
-  cookie["Mojavi"].value = mojaviUid;
+app.post("/main/Authentication/Index", ({ cookie, user }) => {
+  cookie["Mojavi"].value = user?.sessionId;
   cookie["siakng_cc"].value = "noOneCaresAboutThisOneLOL";
   return new Response(file("response/authDone.html"));
 });
 
-app.get("/main/Authentication/ChangeRole", ({ redirect }) => {
+app.get("/main/Authentication/ChangeRole", ({ redirect, user, cookie }) => {
+  if (!user || user.sessionId != cookie["Mojavi"].value) {
+    return error("Unauthorized", "why are you here");
+  }
+
   return redirect("/main/CoursePlan/CoursePlanEdit");
 });
 
-app.get("/main/CoursePlan/CoursePlanEdit", async ({ cookie }) => {
+app.get("/main/CoursePlan/CoursePlanEdit", async ({ cookie, user }) => {
+  if (!user || user.sessionId != cookie["Mojavi"].value) {
+    return error("Unauthorized", "why are you here");
+  }
+
+  const prob = user.isBot
+    ? MOCK_CONFIG.bot.successIrsProbability
+    : MOCK_CONFIG.human.successIrsProbability;
+
   let fName;
   const val = Math.random();
-  if (val < 0.33 || fs.existsSync(".noerr")) {
+  if (val < prob || fs.existsSync(".noerr")) {
     fName = "response/irs.html";
-  } else if (val < 0.66) {
+  } else if (val < (1 - prob) / 2) {
     fName = "response/irsError.html";
   } else {
     fName = "response/irsEmpty.html";
   }
 
-  if (cookie["X-BOT"].value == "t") {
+  if (user?.isBot) {
     return file(fName);
   }
 
@@ -211,12 +246,11 @@ app.post(
   "/main/CoursePlan/CoursePlanSave",
   async ({ body, redirect, user, cookie, request, server }) => {
     if (!user) return redirect("/");
-
-    const isBot = cookie["X-BOT"].value == "t";
-    if (user.isBot && !isBot) {
-      return error("Bad Request", "Nuh uh");
+    if (user.sessionId != cookie["Mojavi"].value) {
+      return error("Unauthorized", "why are you here");
     }
 
+    const isBot = user.isBot;
     if (!isBot) {
       const response = await verifyCloudflare(
         // @ts-ignore
@@ -329,7 +363,8 @@ app.post(
       return new Response("Wrong password", { status: 400 });
     }
 
-    const value = {
+    const value: UserData = {
+      sessionId: randomUUID(),
       name: body.name,
       startTime: new Date().getTime(),
       isBot: body.isBotRun == "on",
@@ -337,9 +372,6 @@ app.post(
 
     cookie["run"].set({
       value: btoa(JSON.stringify(value)),
-    });
-    cookie["X-BOT"].set({
-      value: body.isBotRun == "on" ? "t" : "f",
     });
     return redirect("/main/Authentication/");
   },
